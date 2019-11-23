@@ -1,0 +1,14 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "products";
+@import "scaffolds";
+.navbar-default {
+  background-color: #d3360b;
+  a {
+    color: white !important;
+  }
+  .navbar-brand {
+    font-size: 24px;
+  }
+}

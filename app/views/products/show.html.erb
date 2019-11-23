@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @product.name %></h1>
+<%= link_to image_tag(@product.picture, width: 300), @product %>
+<p>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= number_to_currency @product.price, precision: 0 %>
+</p>
+
+<p>
+  <strong>Cantidades disponibles:</strong>
+  <%= @product.quantity %>
+</p>
+
+<%= link_to 'Regresar a productos', products_path %>
+<%= link_to 'Eliminar producto', product_path(@product), method: :delete %>
+<h3>
+  <% if @product.quantity > 0 %>
+    <%= link_to 'Comprar', purchase_product_path(@product), style: "color:blue" %>
+  <% else %>
+    <%= link_to 'Lo lamentamos, se han acabado las unidades disponibles', products_path, style: "color:blue" %>
+  <% end %>
+</h3>

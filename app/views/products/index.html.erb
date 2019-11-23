@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de Productos</h1>
+
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <h3><%= product.name %></h3>
+      <%= link_to image_tag(product.picture, width: '200'), product %>
+      <%= number_to_currency product.price, precision: 0 %>
+      <%= link_to 'Detalle', product %></li>
+  <% end %>
+</ul>
+<p>
+  <%= link_to 'New Product', new_product_path %>
+</p>

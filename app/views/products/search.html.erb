@@ -1,0 +1,14 @@
+<h1><%= "Resultados de productos: #{@product_name}" %></h1>
+<br>
+<br>
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <h3><%= product.name %></h3>
+      <%= link_to image_tag(product.picture, width: '200'), product %>
+      <%= number_to_currency product.price, precision: 0 %>
+      <%= link_to 'Detalle', product %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Regresar a productos', products_path %>
